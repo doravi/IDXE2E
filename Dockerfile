@@ -1,6 +1,6 @@
 FROM doravidan/testingmachine
 
-RUN sudo apt-get install python-pip python-dev build-essential
+RUN sudo apt-get install python-pip python-dev build-essential -y
 
 RUN sudo pip install --upgrade pip
 
