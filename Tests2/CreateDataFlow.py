@@ -2,7 +2,6 @@ import json
 import requests
 
 
-
 def createDataFlow():
     file = open("Dataflow", "r")
     dataFlow = file.read()

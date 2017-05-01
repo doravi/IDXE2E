@@ -1,10 +1,10 @@
 import sys
 sys.path.append('/Tests2')
 
-from Tests2.CreateDataFlow import createDataFlow
-from Tests2.CreateScheduling import createSchedulaing
-from Tests2.DeleteDataflows import deleteDataflows
-from Tests2.Search import searchScheduling, searchJobStatus
+from CreateDataFlow import createDataFlow
+from CreateScheduling import createSchedulaing
+from DeleteDataflows import deleteDataflows
+from Search import searchScheduling, searchJobStatus
 
 
 dataFlowId = createDataFlow()
