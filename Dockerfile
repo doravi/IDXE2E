@@ -10,4 +10,4 @@ COPY /Tests2 /Tests2
 
 WORKDIR /Tests2
 
-CMD ["python2.7 Main.py"]
+ENTRYPOINT "python2.7 Main.py"
