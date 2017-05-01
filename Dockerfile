@@ -1,5 +1,5 @@
 FROM doravidan/testingmachine
 
-COPY IDX/E2E /Tests
+COPY /IDX /Tests
 
 CMD ["python Main.py"]
