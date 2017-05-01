@@ -4,4 +4,4 @@ COPY /Tests /Tests
 
 WORKDIR /Tests
 
-CMD ["python /Main.py"]
+#CMD ["python /Main.py"]
