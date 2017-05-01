@@ -1,7 +1,7 @@
 FROM doravidan/testingmachine
 
-COPY /Tests /Tests
+COPY /Tests2 /Tests
 
 WORKDIR /Tests
 
-#CMD ["python /Main.py"]
+#CMD ["python /__init__.py"]

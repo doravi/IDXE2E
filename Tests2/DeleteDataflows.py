@@ -1,6 +1,6 @@
 import json
 import requests
-from TestsOld.Search import searchAllDatalows
+from Tests2.Search import searchAllDatalows
 
 
 def deleteDataflows():
