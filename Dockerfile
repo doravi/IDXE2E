@@ -8,4 +8,4 @@ RUN sudo pip install requests
 
 COPY /Tests2 /Tests2
 
-CMD ["python Tests2/Main.py"]
+#CMD ["python Tests2/Main.py"]
