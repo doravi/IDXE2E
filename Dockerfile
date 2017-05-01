@@ -2,6 +2,4 @@ FROM doravidan/testingmachine
 
 COPY /IDX /Tests
 
-WORKDIR /IDX
-
-CMD ["python Main.py"]
+CMD ["python ~/IDX/Main.py"]
