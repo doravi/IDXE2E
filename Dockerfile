@@ -8,4 +8,6 @@ RUN sudo pip install requests
 
 COPY /Tests2 /Tests2
 
-#CMD ["python Tests2/Main.py"]
+WORKDIR /Tests2
+
+CMD ["python2.7 Main.py"]
