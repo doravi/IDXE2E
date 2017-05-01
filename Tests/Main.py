@@ -1,10 +1,7 @@
-from IDX.DeleteDataflows import deleteDataflows
-
-__author__ = 'dor.av'
-
-from IDX.CreateDataFlow import createDataFlow
-from IDX.CreateScheduling import createSchedulaing
-from IDX.Search import searchScheduling, searchJobStatus
+from Tests.CreateDataFlow import createDataFlow
+from Tests.CreateScheduling import createSchedulaing
+from Tests.DeleteDataflows import deleteDataflows
+from Tests.Search import searchScheduling, searchJobStatus
 
 
 dataFlowId = createDataFlow()

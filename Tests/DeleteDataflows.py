@@ -1,6 +1,6 @@
 import json
 import requests
-from IDX.Search import searchAllDatalows
+from Tests.Search import searchAllDatalows
 
 
 def deleteDataflows():
