@@ -119,7 +119,7 @@
     "username": "foo",
     "password": "pass",
     "remotePath": "upload",
-    "port": 2222,
+    "port": 22,
     "temporaryUploadExtension": false
    }
   }
