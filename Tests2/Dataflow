@@ -99,7 +99,7 @@
    "id": "dsv",
    "type": "file.format.dsv",
    "params": {
-    "fileName": "GIGYA_TO_SFTP_${now}.csv",
+    "fileName": "GIGYA_TO_SFTP.csv",
     "columnSeparator": ",",
     "quoteFields": true,
     "writeHeader": true,
@@ -107,13 +107,6 @@
     "fileDateFormat": "YYMMdd_HHmm",
     "createEmptyFile": true
    },
-   "next": [
-    "gzip"
-   ]
-  },
-  {
-   "id": "gzip",
-   "type": "file.compress.gzip",
    "next": [
     "sftp"
    ]

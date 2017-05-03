@@ -42,7 +42,18 @@ def searchJobStatus():
     # GET with params in URL
     r = requests.get(url, params=payload, verify=False)
     result = json.loads(r.text)
-    print(result)
-    return (result)
+    resultStatus = result[u'result'][0][u'status']
+    while resultStatus != u'succeeded':
+        r = requests.get(url, params=payload, verify=False)
+        result = json.loads(r.text)
+        resultStatus = result[u'result'][0][u'status']
+
+    fileName = result[u'result'][0][u'trace'][3]
+    line, fileName = fileName.split("file ")
+    fileName = str(fileName)
+    return (fileName)
+
+
+
 
 
