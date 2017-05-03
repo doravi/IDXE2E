@@ -7,7 +7,7 @@ def readFileFromSFTP(fileName):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
-                ssh.connect('magento.local.gigya.com', 2222, username='foo', password='pass')
+                ssh.connect('idx-etl', 22, username='idx', password='idx')
         except paramiko.SSHException:
                 print "Connection Failed"
                 quit()
@@ -15,7 +15,7 @@ def readFileFromSFTP(fileName):
         stdin,stdout,stderr = ssh.exec_command("ls /etc/")
 
         sftp = ssh.open_sftp()
-        path = "/upload/"
+        path = "/usr/idx/dor/"
         for x in xrange(0,30):
 
                 try:
