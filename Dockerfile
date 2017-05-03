@@ -8,8 +8,6 @@ RUN sudo pip install requests
 
 RUN sudo pip install paramiko
 
-RUN sudo pip install filecmp
-
 COPY /Tests2 /Tests2
 
 WORKDIR /Tests2
