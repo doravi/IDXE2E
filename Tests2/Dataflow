@@ -115,10 +115,10 @@
    "id": "sftp",
    "type": "datasource.write.sftp",
    "params": {
-    "host": "magento.local.gigya.com",
-    "username": "foo",
-    "password": "pass",
-    "remotePath": "upload",
+    "host": "idx-etl",
+    "username": "idx",
+    "password": "idx",
+    "remotePath": "dor",
     "port": 22,
     "temporaryUploadExtension": false
    }
