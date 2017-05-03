@@ -7,7 +7,7 @@ from CreateScheduling import createSchedulaing
 from DeleteDataflows import deleteDataflows
 from Search import searchScheduling, searchJobStatus
 from ReadFromSFTP import readFileFromSFTP
-from CompareOutput import compareOutputs
+from CompareOutputs import compareOutputs
 
 
 dataFlowId = createDataFlow()
