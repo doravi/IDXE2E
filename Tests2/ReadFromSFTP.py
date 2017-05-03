@@ -16,7 +16,7 @@ def readFileFromSFTP(fileName):
 
         sftp = ssh.open_sftp()
         path = "/upload/"
-        for x in xrange(0,10):
+        for x in xrange(0,30):
 
                 try:
                         my_file = sftp.open(path + fileName, 'r')
