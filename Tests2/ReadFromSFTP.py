@@ -24,10 +24,14 @@ def readFileFromSFTP(fileName):
                         f = open('Remote'+fileName, 'w')
                         f.write(my_file)
                         f.close()
+                        sftp.remove(path + fileName)
                         break
                 except Exception as e:
                         print (str(e))
                         time.sleep(1)
+                if x == 29:
+                        print ("File does not exist")
+                        exit()
 
         sftp.close()
         ssh.close()

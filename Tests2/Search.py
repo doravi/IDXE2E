@@ -1,7 +1,6 @@
 import json
 import requests
-
-
+import time
 
 
 def searchAllDatalows():
@@ -26,10 +25,21 @@ def searchScheduling():
     #r = requests.get(url)
 
     # GET with params in URL
-    r = requests.get(url, params=payload, verify=False)
-    result = json.loads(r.text)
-    print(result)
-    return (result)
+    resultStatus = ""
+    for x in xrange(0, 30):
+        if resultStatus != u'succeeded':
+            r = requests.get(url, params=payload, verify=False)
+            result = json.loads(r.text)
+            try:
+                resultStatus = result[u'result'][0][u'schedulingStatus']
+            except Exception as e:
+                print(e)
+            time.sleep(1)
+            if x == 29:
+                print ("Job didnt start")
+                exit()
+    print(resultStatus)
+    return (resultStatus)
 
 
 def searchJobStatus():
@@ -43,10 +53,14 @@ def searchJobStatus():
     r = requests.get(url, params=payload, verify=False)
     result = json.loads(r.text)
     resultStatus = result[u'result'][0][u'status']
-    while resultStatus != u'succeeded':
-        r = requests.get(url, params=payload, verify=False)
-        result = json.loads(r.text)
-        resultStatus = result[u'result'][0][u'status']
+    for x in xrange(0, 30):
+        if resultStatus != u'succeeded':
+            r = requests.get(url, params=payload, verify=False)
+            result = json.loads(r.text)
+            resultStatus = result[u'result'][0][u'status']
+            if x == 29:
+                    print ("Job didnt start")
+                    exit()
 
     fileName = result[u'result'][0][u'trace'][3]
     line, fileName = fileName.split("file ")
