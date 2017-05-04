@@ -13,7 +13,6 @@ def createDataFlow():
 
     # GET with params in URL
     r = requests.get(url, params=payload, verify=False)
-    print (r.text)
     response = json.loads(r.text)
     dataFlowId = response['id']
     return dataFlowId

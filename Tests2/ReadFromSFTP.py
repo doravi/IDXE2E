@@ -27,10 +27,9 @@ def readFileFromSFTP(fileName):
                         sftp.remove(path + fileName)
                         break
                 except Exception as e:
-                        print (str(e))
                         time.sleep(1)
-                if x == 29:
-                        raise Exception("File does not exist")
+                        if x == 29:
+                                raise Exception("File does not exist " + str(e))
 
         sftp.close()
         ssh.close()

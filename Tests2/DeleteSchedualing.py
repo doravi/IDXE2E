@@ -15,7 +15,6 @@ def deleteSchedulings():
             # GET with params in URL
             r = requests.get(url, params=payload, verify=False)
             result = json.loads(r.text)
-            print(result)
     except Exception as e:
         print(str(e) + ' there are no Schedulings to delete')
 

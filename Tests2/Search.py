@@ -1,6 +1,10 @@
+import sys
+sys.path.append('/Tests2')
+
 import json
 import requests
 import time
+from GetNextJob import getNextJob
 
 
 def searchAllDatalows():
@@ -26,16 +30,17 @@ def searchScheduling():
 
     # GET with params in URL
     resultStatus = ""
-    for x in xrange(0, 30):
-        if resultStatus != u'succeeded':
+    for x in xrange(0, 5):
+        if resultStatus == u'ready' or resultStatus == u'busy':
             r = requests.get(url, params=payload, verify=False)
             result = json.loads(r.text)
             try:
                 resultStatus = result[u'result'][0][u'schedulingStatus']
             except Exception as e:
                 print(e)
-            time.sleep(1)
-            if x == 29:
+            #getNextJob()
+            time.sleep(3)
+            if x == 4:
                 raise Exception("Job didnt start")
     print(resultStatus)
     return (resultStatus)
@@ -52,12 +57,13 @@ def searchJobStatus():
     r = requests.get(url, params=payload, verify=False)
     result = json.loads(r.text)
     resultStatus = result[u'result'][0][u'status']
-    for x in xrange(0, 30):
+    for x in xrange(0, 5):
         if resultStatus != u'succeeded':
             r = requests.get(url, params=payload, verify=False)
             result = json.loads(r.text)
             resultStatus = result[u'result'][0][u'status']
-            if x == 29:
+            time.sleep(3)
+            if x == 4:
                 raise Exception("Job not finished")
 
     fileName = result[u'result'][0][u'trace'][3]
