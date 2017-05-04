@@ -14,8 +14,4 @@ RUN sudo chmod 777 /Tests2
 
 WORKDIR /Tests2
 
-RUN sudo -s
-
-RUN sudo chmod 777 /Tests2
-
 CMD python2.7  '/Tests2/Main.py'

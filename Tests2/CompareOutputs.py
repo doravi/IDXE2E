@@ -2,6 +2,7 @@
 import filecmp
 
 def compareOutputs():
+    print("Comparing Outputs")
     f = open('GIGYA_TO_SFTP.csv', 'r')
     localFile = f.read()
     f.close()
