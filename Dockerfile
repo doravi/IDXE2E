@@ -10,9 +10,7 @@ RUN sudo pip install paramiko
 
 COPY /Tests2 /Tests2
 
-RUN sudo -s
-
-RUN chmod 777 /Tests2
+RUN sudo chmod 777 /Tests2
 
 WORKDIR /Tests2
 
