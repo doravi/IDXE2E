@@ -16,4 +16,4 @@ WORKDIR /Tests2
 
 RUN sudo -s
 
-CMD python2.7  '/Tests2/Main.py'
+CMD sudo python2.7  '/Tests2/Main.py'
