@@ -3,7 +3,7 @@ import time
 
 
 def readFileFromSFTP(fileName):
-
+        print ("Connecting ro SFTP")
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
@@ -19,12 +19,14 @@ def readFileFromSFTP(fileName):
         for x in xrange(0,30):
 
                 try:
+                        print ("Trying to read output from SFTP")
                         my_file = sftp.open(path + fileName, 'r')
                         my_file = my_file.read()
                         f = open('Remote'+fileName, 'w')
                         f.write(my_file)
                         f.close()
                         sftp.remove(path + fileName)
+                        print ("File was found in SFTP")
                         break
                 except Exception as e:
                         time.sleep(1)

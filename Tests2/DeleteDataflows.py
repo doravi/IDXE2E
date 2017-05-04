@@ -4,6 +4,7 @@ from Search import searchAllDatalows
 
 
 def deleteDataflows():
+    print ("Deleting Dataflows")
     dataflows = searchAllDatalows()
     try:
         for dataflow in dataflows['result']:

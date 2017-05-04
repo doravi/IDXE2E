@@ -31,6 +31,7 @@ def searchScheduling():
     # GET with params in URL
     resultStatus = ""
     for x in xrange(0, 5):
+        print ("Searching schedualing status")
         if resultStatus == u'ready' or resultStatus == u'busy':
             r = requests.get(url, params=payload, verify=False)
             result = json.loads(r.text)
@@ -58,6 +59,7 @@ def searchJobStatus():
     result = json.loads(r.text)
     resultStatus = result[u'result'][0][u'status']
     for x in xrange(0, 5):
+        print ("Searching job status")
         if resultStatus != u'succeeded':
             r = requests.get(url, params=payload, verify=False)
             result = json.loads(r.text)
