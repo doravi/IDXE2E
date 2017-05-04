@@ -1,3 +1,4 @@
+import os
 import sys
 sys.path.append('/Tests2')
 
@@ -19,6 +20,6 @@ except Exception as e:
     print(e)
 finally:
     deleteDataflows()
-
+    os.remove("RemoteGIGYA_TO_SFTP.csv")
 
 
