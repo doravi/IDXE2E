@@ -29,7 +29,7 @@ def readFileFromSFTP(fileName):
                         print ("File was found in SFTP")
                         break
                 except Exception as e:
-                        time.sleep(1)
+                        time.sleep(10)
                         if x == 29:
                                 raise Exception("File does not exist " + str(e))
 
