@@ -8,9 +8,11 @@ RUN sudo pip install requests
 
 RUN sudo pip install paramiko
 
-RUN chmod -Rf 777 /Tests2
-
 COPY /Tests2 /Tests2
+
+RUN sudo -s
+
+RUN chmod 777 /Tests2
 
 WORKDIR /Tests2
 
