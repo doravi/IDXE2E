@@ -19,7 +19,7 @@ def readFileFromSFTP(fileName):
         for x in xrange(0,30):
 
                 try:
-                        print ("Trying to read output from SFTP")
+                        print ("Trying to read output from SFTP: " + str(x))
                         my_file = sftp.open(path + fileName, 'r')
                         my_file = my_file.read()
                         f = open('Remote'+fileName, 'w')
