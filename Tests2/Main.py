@@ -9,11 +9,15 @@ from Search import searchScheduling, searchJobStatus
 from ReadFromSFTP import readFileFromSFTP
 from CompareOutputs import compareOutputs
 
+try:
+    dataFlowId = createDataFlow()
+    createSchedulaing(dataFlowId)
+    searchScheduling()
+    fileName = searchJobStatus()
+    readFileFromSFTP(fileName)
+    compareOutputs()
+except Exception as e:
+    print(e)
+finally:
+    deleteDataflows()
 
-dataFlowId = createDataFlow()
-createSchedulaing(dataFlowId)
-searchScheduling()
-fileName = searchJobStatus()
-readFileFromSFTP(fileName)
-compareOutputs()
-deleteDataflows()

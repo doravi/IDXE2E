@@ -30,8 +30,7 @@ def readFileFromSFTP(fileName):
                         print (str(e))
                         time.sleep(1)
                 if x == 29:
-                        print ("File does not exist")
-                        exit()
+                        raise Exception("File does not exist")
 
         sftp.close()
         ssh.close()
